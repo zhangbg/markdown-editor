@@ -913,7 +913,11 @@ id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
     });
 
     editor.on('change', update);
-
+    editor.on('scroll', function (cm) {
+        var scrollInfo = cm.getScrollInfo();
+        var out = document.getElementById('out');
+        out.scrollTop = scrollInfo.top + 300;
+    });
 
 
 
